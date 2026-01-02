@@ -9,13 +9,18 @@ const Navbar = () => {
   return (
     <>
       {/* Navbar */}
-     <nav className="bg-gradient-to-r from-slate-700 via-blue-800 to-slate-700 border-b border-blue-900/40">
+    <nav className="bg-gradient-to-r from-slate-700 via-blue-800 to-slate-700 border-b border-blue-900/40">
         <div className="max-w-7xl mx-auto px-6 py-3 flex items-center justify-between">
           
           {/* Logo */}
-          <div className="text-2xl font-bold text-white">
-            AgriShopper
-          </div>
+          <Link to="/" className="flex items-center gap-2">
+              <img
+                src="/images/logo.jpeg"
+                alt="AgriShoppers Logo"
+                className="h-13 w-auto sm:h-10 rounded-full object-cover"
+              />
+            </Link>
+
 
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center space-x-8">

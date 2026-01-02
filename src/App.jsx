@@ -11,6 +11,7 @@ import Categories from './Pages/Categories';
 import About from './Pages/About';
 import Contact from './Pages/Contact';
 import Blog from './Pages/Blog';
+import FAQ from './Pages/FAQ';
 import Terms from './Pages/Terms';
 import PrivacyPolicy from './Pages/PrivacyPolicy';
 import RefundCancellation from './Pages/RefundCancellation';
@@ -42,6 +43,7 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/blog" element={<Blog />} />
+          <Route path="/faq" element={<FAQ />} />
           <Route path="/terms" element={<Terms />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           <Route path="/refund-cancel" element={<RefundCancellation />} />

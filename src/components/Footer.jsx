@@ -7,14 +7,18 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto px-6 py-10 grid grid-cols-1 md:grid-cols-4 gap-8">
         
         {/* Brand */}
-        <div>
-          <h2 className="text-xl font-bold text-slate-100 mb-3">
-            AgriShopper
-          </h2>
-          <p className="text-sm text-slate-400">
+       
+        <div className="flex flex-col items-start">
+          <img
+            src="/images/logo.jpeg"
+            alt="AgriShoppers Logo"
+            className="h-14 w-auto mb-5 rounded-full object-cover"
+          />
+          <p className="text-sm text-gray-300 max-w-xs">
             Premium products with best quality and fast delivery.
           </p>
         </div>
+
 
         {/* Links */}
         <div>
@@ -32,7 +36,7 @@ const Footer = () => {
         <div>
           <h3 className="text-slate-100 font-semibold mb-3">Support</h3>
           <ul className="space-y-2 text-sm">
-          
+            <li><Link to="/faq" className="hover:text-slate-100 cursor-pointer">FAQ</Link></li>
             <li><Link to="/privacy-policy" className="hover:text-slate-100 cursor-pointer">Privacy Policy</Link></li>
             <li><Link to="/terms" className="hover:text-slate-100 cursor-pointer">Terms & Conditions</Link></li>
             <li><Link to="/refund-cancel" className="hover:text-slate-100 cursor-pointer">Refund & Cancellation</Link></li>
