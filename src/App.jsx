@@ -3,7 +3,7 @@ import { Routes, Route, useLocation } from 'react-router-dom';
 
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
-import DesktopAgriInfo from './components/DesktopAgriinfo'
+import DesktopAgriInfo from './components/DesktopAgriInfo';
 import Home from './Pages/Home';
 import Login from './Pages/Login';
 import Register from './Pages/Register';
@@ -21,7 +21,7 @@ import Media from './Pages/Media';
 import Navigation from './Pages/Navigation';
 
 function App() {
-  const { pathname } = useLocation(); // ✅ get current route
+  const { pathname } = useLocation(); 
 
   useEffect(() => {
     window.scrollTo({
