@@ -25,7 +25,7 @@ const Contact = () => {
               📍 Address: Bhubaneswar, Odisha, India
             </p>
             <p className="text-gray-600 mb-3">
-              📞 Phone: +91 98765 43210
+              📞 Phone: +91 1234567890
             </p>
             <p className="text-gray-600 mb-3">
               ✉️ Email: info@agrishoppers.com

@@ -1,34 +1,51 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { ShoppingCartIcon, HeartIcon, UserCircleIcon, MagnifyingGlassIcon, XMarkIcon } from "@heroicons/react/24/outline";
+import {
+  ShoppingCartIcon,
+  HeartIcon,
+  UserCircleIcon,
+  MagnifyingGlassIcon,
+} from "@heroicons/react/24/outline";
 
 const Navbar = () => {
-  const [open, setOpen] = useState(false); // Mobile menu
-  const [searchOpen, setSearchOpen] = useState(false); // Mobile search
+  const [open, setOpen] = useState(false);
 
   return (
     <>
       {/* Navbar */}
-    <nav className="bg-gradient-to-r from-slate-700 via-blue-800 to-slate-700 border-b border-blue-900/40">
-        <div className="max-w-7xl mx-auto px-6 py-3 flex items-center justify-between">
+    <nav className="bg-gradient-to-r from-slate-700 via-blue-800 to-slate-700 backdrop-blur-md">
+
+        <div className="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
           
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-2">
+          <Link to="/" className="flex items-center gap-2 md:-ml-8">
+            <div className="bg-white p-1 rounded-full shadow-md">
               <img
-                src="/images/logo.jpeg"
+                src="/images/logo.png"
                 alt="AgriShoppers Logo"
-                className="h-13 w-auto sm:h-10 rounded-full object-cover"
+                className="h-10 w-10 object-cover rounded-full"
               />
-            </Link>
+            </div>
+          </Link>
 
 
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center space-x-8">
-            <Link to="/" className="text-white hover:text-gray-200 font-medium">Home</Link>
-            <Link to="/products" className="text-white hover:text-gray-200 font-medium">Products</Link>
-
+            <Link to="/" className="text-white font-medium hover:text-gray-200">
+              Home
+            </Link>
+            <Link to="/products" className="text-white font-medium hover:text-gray-200">
+              Products
+            </Link>
+            <Link to="/about" className="text-white font-medium hover:text-gray-200">
+              About Us
+            </Link>
+            <Link to="/contact" className="text-white font-medium hover:text-gray-200">
+              Contact
+            </Link>
+            
             {/* Desktop Search */}
-            <div className="relative">
+            <div className="relative bg-amber-50 rounded-lg">
               <input
                 type="text"
                 placeholder="Search products..."
@@ -38,61 +55,51 @@ const Navbar = () => {
             </div>
           </div>
 
-          {/* Right Icons (visible on all screens) */}
+          {/* Right Icons */}
           <div className="flex items-center space-x-4">
-            {/* Wishlist - Desktop only */}
-            <Link to="/wishlist" className="hidden md:flex relative text-white hover:text-gray-200">
+            {/* Wishlist (Desktop) */}
+            <Link to="/wishlist" className="hidden md:flex relative text-white">
               <HeartIcon className="w-6 h-6" />
-              <span className="absolute -top-2 -right-3 bg-red-600 text-white rounded-full text-xs w-5 h-5 flex items-center justify-center">
+              <span className="absolute -top-2 -right-3 bg-red-600 text-xs w-5 h-5 rounded-full flex items-center justify-center">
                 0
               </span>
             </Link>
 
-          {/* User */}
-            <Link to="/login" className="text-white hover:text-gray-200">
+            {/* User */}
+            <Link to="/login" className="text-white">
               <UserCircleIcon className="w-6 h-6" />
             </Link>
 
-              {/* Cart */}
-            <Link to="/cart" className="relative text-white hover:text-gray-200">
+            {/* Cart */}
+            <Link to="/cart" className="relative text-white">
               <ShoppingCartIcon className="w-6 h-6" />
-              <span className="absolute -top-2 -right-3 bg-red-600 text-white rounded-full text-xs w-5 h-5 flex items-center justify-center">
+              <span className="absolute -top-2 -right-3 bg-red-600 text-xs w-5 h-5 rounded-full flex items-center justify-center">
                 0
               </span>
             </Link>
 
-            {/* Mobile Buttons */}
-            {/* Mobile Menu Icon */}
-              <button
-                onClick={() => setOpen(true)}
-                className="text-white text-2xl"
-              >
-                ☰
-              </button>
-            
-          </div>
-        </div>
-      </nav>
-
-      {/* Mobile Search Overlay */}
-      {searchOpen && (
-        <div className="fixed inset-0 z-50 bg-black/70 flex items-center justify-center px-4">
-          <div className="relative w-full max-w-md">
-            <input
-              type="text"
-              placeholder="Search products..."
-              className="w-full py-2 pl-4 pr-12 rounded-md text-black"
-              autoFocus
-            />
+            {/* Mobile Menu */}
             <button
-              onClick={() => setSearchOpen(false)}
-              className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-700"
+              onClick={() => setOpen(true)}
+              className="md:hidden text-white text-2xl"
             >
-              <XMarkIcon className="w-6 h-6" />
+              ☰
             </button>
           </div>
         </div>
-      )}
+
+        {/* 🔍 Mobile Search (Below Navbar) */}
+        <div className="md:hidden px-4 pb-3">
+          <div className="relative bg-amber-50 rounded-md">
+            <input
+              type="text"
+              placeholder="Search products..."
+              className="w-full py-2.5 pl-4 pr-10 rounded-full bg-white shadow-sm focus:outline-none"
+            />
+            <MagnifyingGlassIcon className="w-5 h-5 absolute right-4 top-1/2 -translate-y-1/2 text-gray-500" />
+          </div>  
+        </div>
+      </nav>
 
       {/* Mobile Overlay */}
       {open && (
@@ -102,39 +109,25 @@ const Navbar = () => {
         />
       )}
 
-      {/* Right Side Drawer */}
+      {/* Mobile Right Drawer */}
       <div
-        className={`fixed top-0 right-0 h-full w-64 bg-slate-800 z-50 transform transition-transform duration-300
-        ${open ? "translate-x-0" : "translate-x-full"}`}
+        className={`fixed top-0 right-0 h-full w-64 bg-slate-800 z-50 transform transition-transform duration-300 ${
+          open ? "translate-x-0" : "translate-x-full"
+        }`}
       >
-        {/* Close Button */}
-        <div className="flex items-center justify-between px-5 py-4 border-b border-slate-300">
-          <span className="text-slate-100 font-semibold">Menu</span>
-          <button
-            onClick={() => setOpen(false)}
-            className="text-slate-300 text-2xl"
-          >
+        <div className="flex items-center justify-between px-5 py-4 border-b border-slate-600">
+          <span className="text-white font-semibold">Menu</span>
+          <button onClick={() => setOpen(false)} className="text-white text-2xl">
             ✕
           </button>
         </div>
 
-        {/* Menu Items */}
-        <div className="flex flex-col px-5 py-6 gap-4 text-slate-100">
-          <Link onClick={() => setOpen(false)} to="/" className="hover:text-slate-300">
-            Home
-          </Link>
-          <Link onClick={() => setOpen(false)} to="/categories" className="hover:text-slate-300">
-            Category
-          </Link>
-          <Link onClick={() => setOpen(false)} to="/about" className="hover:text-slate-300">
-            About Us
-          </Link>
-          <Link onClick={() => setOpen(false)} to="/contact" className="hover:text-slate-300">
-            Contact
-          </Link>
-          <Link onClick={() => setOpen(false)} to="/login" className="hover:text-slate-300">
-            Login
-          </Link>
+        <div className="flex flex-col px-5 py-6 gap-4 text-white">
+          <Link to="/" onClick={() => setOpen(false)}>Home</Link>
+          <Link to="/categories" onClick={() => setOpen(false)}>Categories</Link>
+          <Link to="/about" onClick={() => setOpen(false)}>About Us</Link>
+          <Link to="/contact" onClick={() => setOpen(false)}>Contact</Link>
+          <Link to="/login" onClick={() => setOpen(false)}>Login</Link>
         </div>
       </div>
     </>

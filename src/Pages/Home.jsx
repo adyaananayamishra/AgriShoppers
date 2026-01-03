@@ -9,6 +9,7 @@ import PopularPicks from "../components/PopularPicks";
 
 import WhyChooseUs from '../components/WhyChooseUs';
 import Testimonial from '../components/Testimonial';
+// import DesktopAgriInfo from '../components/DesktopAgriinfo';
 
 const Home = () => {
     return (
@@ -22,6 +23,7 @@ const Home = () => {
             <PopularPicks />
             <WhyChooseUs />
             <Testimonial />
+            {/* <DesktopAgriInfo /> */}
         </div>
     );
 };

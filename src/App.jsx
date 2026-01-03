@@ -3,10 +3,11 @@ import { Routes, Route, useLocation } from 'react-router-dom';
 
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
-
+import DesktopAgriInfo from './components/DesktopAgriinfo'
 import Home from './Pages/Home';
 import Login from './Pages/Login';
 import Register from './Pages/Register';
+import AllBrands from './Pages/AllBrands';
 import Categories from './Pages/Categories';
 import About from './Pages/About';
 import Contact from './Pages/Contact';
@@ -15,6 +16,9 @@ import FAQ from './Pages/FAQ';
 import Terms from './Pages/Terms';
 import PrivacyPolicy from './Pages/PrivacyPolicy';
 import RefundCancellation from './Pages/RefundCancellation';
+import Career from './Pages/Career';
+import Media from './Pages/Media';
+import Navigation from './Pages/Navigation';
 
 function App() {
   const { pathname } = useLocation(); // ✅ get current route
@@ -23,9 +27,11 @@ function App() {
     window.scrollTo({
       top: 0,
       left: 0,
-      behavior: "smooth", // remove if you want instant
+      behavior: "smooth", 
     });
-  }, [pathname]); // ✅ runs on every route change
+  }, [pathname]);
+  
+  const showFooterRoutes = ["/", "/contact"];
 
   return (
     <div className="flex flex-col min-h-screen">
@@ -39,6 +45,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
+          <Route path="/brands" element={<AllBrands />} />
           <Route path="/categories" element={<Categories />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
@@ -47,11 +54,16 @@ function App() {
           <Route path="/terms" element={<Terms />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           <Route path="/refund-cancel" element={<RefundCancellation />} />
+          <Route path="/career" element={<Career />} />
+          <Route path="/media" element={<Media />} />
+          <Route path="/navigation" element={<Navigation />} />
+
         </Routes>
       </main>
 
       {/* Footer */}
-      <Footer />
+        {showFooterRoutes.includes(pathname) && <Footer />}
+        <DesktopAgriInfo />
     </div>
   );
 }
