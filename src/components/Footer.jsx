@@ -29,32 +29,34 @@ const Footer = () => {
             <li><Link to="/" className="hover:text-slate-100">Home</Link></li>
             <li><Link to="/about" className="hover:text-slate-100">About Us</Link></li>
           
-            <li><Link to="/blog" className="hover:text-white cursor-pointer">Our Stories</Link></li>
+          
             <li><Link to="/farmer-resources" className="hover:text-white cursor-pointer">Farmer Resources</Link></li>
             <li><Link to="/quality-assurance" className="hover:text-white cursor-pointer">Quality Assurance</Link></li>
             <li><Link to="/policies-guidelines" className="hover:text-white cursor-pointer">Policies & Guidelines</Link></li>
             <li><Link to="/join-team" className="hover:text-white cursor-pointer">Join Our Team</Link></li>
-            <li><Link to="/delivery-logistics" className="hover:text-white cursor-pointer">Delivery & Logistics</Link></li>
+          
             <li><Link to="/contact" className="hover:text-white cursor-pointer">Help Center</Link></li>
             <li><Link to="/site-map" className="hover:text-white cursor-pointer">Site Map</Link></li>
-            <li><Link to="/sell-produce" className="text-orange-500 hover:text-orange-400 cursor-pointer">Sell Your Produce</Link></li>
-            <li><Link to="/bulk-partnerships" className="text-orange-500 hover:text-orange-400 cursor-pointer">Bulk Partnership Enquiries</Link></li>
+            {/* <li><Link to="/sell-produce" className="text-orange-500 hover:text-orange-400 cursor-pointer">Sell Your Produce</Link></li>
+            <li><Link to="/bulk-partnerships" className="text-orange-500 hover:text-orange-400 cursor-pointer">Bulk Partnership Enquiries</Link></li> */}
 
           
           </ul>
         </div>
 
-        {/* Support
+        
+        {/*Support */}
         <div>
-          <h3 className="text-slate-100 font-semibold mb-3">Support</h3>
+          <h3 className="text-slate-100 font-semibold mb-3">Useful Links</h3>
           <ul className="space-y-2 text-sm">
             <li><Link to="/faq" className="hover:text-slate-100 cursor-pointer">FAQ</Link></li>
             <li><Link to="/privacy-policy" className="hover:text-slate-100 cursor-pointer">Privacy Policy</Link></li>
             <li><Link to="/terms" className="hover:text-slate-100 cursor-pointer">Terms & Conditions</Link></li>
-            <li><Link to="/refund-cancel" className="hover:text-slate-100 cursor-pointer">Refund & Cancellation</Link></li>
+             <li><Link to="/delivery-logistics" className="hover:text-white cursor-pointer">Delivery & Logistics</Link></li>
             <li><Link to="/navigation" className="hover:text-slate-100 cursor-pointer">Quick Navigation</Link></li>
+            <li><Link to="/refund-cancel" className="hover:text-slate-100 cursor-pointer">Refund & Cancellation</Link></li>
           </ul>
-        </div> */}
+        </div>
 
         {/* Contact */}
         <div>

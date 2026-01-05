@@ -1,4 +1,5 @@
 import React from 'react';
+import SearchBar from '../components/SearchBar';
 import SlideBanner from '../components/SlideBanner';
 import CategoriesSection from '../components/CategoriesSection';
 import Bestselling from '../components/BestSelling';
@@ -14,6 +15,7 @@ import Testimonial from '../components/Testimonial';
 const Home = () => {
     return (
         <div>
+            <SearchBar />
             <SlideBanner />
             <CategoriesSection />
             <Bestselling />
