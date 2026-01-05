@@ -4,6 +4,8 @@ import { Routes, Route, useLocation } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import DesktopAgriInfo from './components/DesktopAgriInfo';
+import BottomNav from "./components/BottomNav";
+
 import Home from './Pages/Home';
 import Login from './Pages/Login';
 import Register from './Pages/Register';
@@ -21,16 +23,16 @@ import Media from './Pages/Media';
 import Navigation from './Pages/Navigation';
 
 function App() {
-  const { pathname } = useLocation(); 
+  const { pathname } = useLocation();
 
   useEffect(() => {
     window.scrollTo({
       top: 0,
       left: 0,
-      behavior: "smooth", 
+      behavior: "smooth",
     });
   }, [pathname]);
-  
+
   const showFooterRoutes = ["/", "/contact"];
 
   return (
@@ -40,7 +42,7 @@ function App() {
       <Navbar />
 
       {/* Page Content */}
-      <main className="flex-grow">
+      <main className="flex-grow pb-16 md:pb-0">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
@@ -57,13 +59,18 @@ function App() {
           <Route path="/career" element={<Career />} />
           <Route path="/media" element={<Media />} />
           <Route path="/navigation" element={<Navigation />} />
-
         </Routes>
       </main>
 
       {/* Footer */}
-        {showFooterRoutes.includes(pathname) && <Footer />}
-        <DesktopAgriInfo />
+      {showFooterRoutes.includes(pathname) && <Footer />}
+
+      {/* Desktop Extra Info */}
+      <DesktopAgriInfo />
+
+      {/* Bottom Navigation (Mobile Only) */}
+      <BottomNav />
+
     </div>
   );
 }

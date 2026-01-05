@@ -22,7 +22,7 @@ const Contact = () => {
               Get in Touch
             </h2>
             <p className="text-gray-600 mb-3">
-              📍 Address: Bhubaneswar, Odisha, India
+              📍 Address: Laxmanpur Pilakh, Jhinjhak, Kanpur Dehat, Kanpur Dehat, Uttar Pradesh, India, 209302
             </p>
             <p className="text-gray-600 mb-3">
               📞 Phone: +91 1234567890

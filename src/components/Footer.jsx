@@ -11,11 +11,11 @@ const Footer = () => {
         {/* Brand */}
        
         <div className="flex flex-col items-start">
-          <img
-            src="/images/logo.jpeg"
-            alt="AgriShoppers Logo"
-            className="h-14 w-auto mb-5 rounded-full object-cover"
-          />
+           {/* Logo */}
+                <Link to="/" className="text-2xl font-extrabold text-green-700 mb-3">
+                    <span className="text-green-600">Agri</span>
+                    <span className="text-green-500">Shoppers</span>
+                  </Link>
           <p className="text-sm text-gray-300 max-w-xs">
             Premium products with best quality and fast delivery.
           </p>
@@ -28,15 +28,23 @@ const Footer = () => {
           <ul className="space-y-2 text-sm">
             <li><Link to="/" className="hover:text-slate-100">Home</Link></li>
             <li><Link to="/about" className="hover:text-slate-100">About Us</Link></li>
-            <li><Link to="/blog" className="hover:text-slate-100">Blog</Link></li>
-            <li><Link to="/contact" className="hover:text-slate-100">Contact</Link></li>
-            <li><Link to="/career" className="hover:text-slate-100">Career</Link></li>
-            <li><Link to="/media" className="hover:text-slate-100">Community & Updates</Link></li>
+          
+            <li><Link to="/blog" className="hover:text-white cursor-pointer">Our Stories</Link></li>
+            <li><Link to="/farmer-resources" className="hover:text-white cursor-pointer">Farmer Resources</Link></li>
+            <li><Link to="/quality-assurance" className="hover:text-white cursor-pointer">Quality Assurance</Link></li>
+            <li><Link to="/policies-guidelines" className="hover:text-white cursor-pointer">Policies & Guidelines</Link></li>
+            <li><Link to="/join-team" className="hover:text-white cursor-pointer">Join Our Team</Link></li>
+            <li><Link to="/delivery-logistics" className="hover:text-white cursor-pointer">Delivery & Logistics</Link></li>
+            <li><Link to="/contact" className="hover:text-white cursor-pointer">Help Center</Link></li>
+            <li><Link to="/site-map" className="hover:text-white cursor-pointer">Site Map</Link></li>
+            <li><Link to="/sell-produce" className="text-orange-500 hover:text-orange-400 cursor-pointer">Sell Your Produce</Link></li>
+            <li><Link to="/bulk-partnerships" className="text-orange-500 hover:text-orange-400 cursor-pointer">Bulk Partnership Enquiries</Link></li>
+
           
           </ul>
         </div>
 
-        {/* Support */}
+        {/* Support
         <div>
           <h3 className="text-slate-100 font-semibold mb-3">Support</h3>
           <ul className="space-y-2 text-sm">
@@ -46,7 +54,7 @@ const Footer = () => {
             <li><Link to="/refund-cancel" className="hover:text-slate-100 cursor-pointer">Refund & Cancellation</Link></li>
             <li><Link to="/navigation" className="hover:text-slate-100 cursor-pointer">Quick Navigation</Link></li>
           </ul>
-        </div>
+        </div> */}
 
         {/* Contact */}
         <div>
