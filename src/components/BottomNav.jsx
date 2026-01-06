@@ -32,7 +32,7 @@ const BottomNav = () => {
           <span>Agri Assist</span>
         </NavLink>
 
-        <NavLink to="/blogs" className={linkClass}>
+        <NavLink to="/blog" className={linkClass}>
           <DocumentTextIcon className="w-6 h-6" />
           <span>Articles</span>
         </NavLink>

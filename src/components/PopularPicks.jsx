@@ -1,97 +1,74 @@
-import React from "react";
-
-const popularItems = [
-  {
-    name: "Plant Growth Activator",
-    price: "₹899",
-    badge: "Popular",
-    image: "/images/popular 1.jpg",
-  },
-  {
-    name: "Heavy Duty Sprayer",
-    price: "₹1,699",
-    badge: "Top Rated",
-    image: "/images/popular 2.jpg",
-  },
-  {
-    name: "Eco Pest Solution",
-    price: "₹549",
-    badge: "New Arrival",
-    image: "/images/popular 3.jpg",
-  },
-];
+import React, { useMemo } from "react";
+import { useNavigate } from "react-router-dom";
+import { popularPicks as popularItems } from "../data/popularPicks";
 
 const PopularPicks = () => {
+  const navigate = useNavigate();
+
+  // Randomize once
+  const shuffledItems = useMemo(() => {
+    return [...popularItems].sort(() => 0.5 - Math.random());
+  }, []);
+
+  const visibleItems = shuffledItems.slice(0, 4);
+
   return (
     <section className="py-16 sm:py-20 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-        {/* Section Header */}
-        <div className="text-center mb-12">
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-green-800">
-            Popular Picks
-          </h2>
-          <p className="text-gray-600 mt-3 text-sm sm:text-base max-w-2xl mx-auto">
-            Best-selling and farmer-recommended products for better yield
-          </p>
+        {/* HEADER + SHOW MORE */}
+        <div className="flex items-center justify-between mb-10">
+          <div>
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-green-800">
+              Popular Picks
+            </h2>
+            <p className="text-gray-600 mt-2 text-sm sm:text-base">
+              Best-selling and farmer-recommended products
+            </p>
+          </div>
+
+          <button
+            onClick={() => navigate("/popular-picks")}
+            className="hidden sm:inline-block px-6 py-2 rounded-full
+                       border border-green-700 text-green-700 font-semibold
+                       hover:bg-green-700 hover:text-white transition"
+          >
+            Show More →
+          </button>
         </div>
 
-        {/* Products Grid */}
-        <div
-          className="
-            grid grid-cols-1 
-            sm:grid-cols-2 
-            lg:grid-cols-3 
-            gap-6 lg:gap-8
-          "
-        >
-          {popularItems.map((item, index) => (
+        {/* PRODUCTS GRID */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {visibleItems.map((item, index) => (
             <div
               key={index}
-              className="
-                group relative bg-white rounded-2xl border
-                transition-all duration-300
-                md:hover:shadow-2xl md:hover:-translate-y-2
-              "
+              className="group bg-white rounded-2xl border
+                         transition-all duration-300
+                         md:hover:shadow-xl md:hover:-translate-y-1"
             >
-              {/* Badge */}
-              <span className="
-                absolute top-4 left-4 z-10
-                bg-green-700 text-white text-xs
-                px-3 py-1 rounded-full
-              ">
+              <span className="absolute mt-3 ml-3 bg-green-700 text-white
+                               text-xs px-3 py-1 rounded-full">
                 {item.badge}
               </span>
 
-              {/* Image */}
-              <div className="overflow-hidden rounded-t-2xl">
-                <img
-                  src={item.image}
-                  alt={item.name}
-                  className="
-                    h-44 sm:h-48 lg:h-52 w-full object-cover
-                    md:group-hover:scale-110 transition duration-500
-                  "
-                />
-              </div>
+              <img
+                src={item.image}
+                alt={item.name}
+                className="h-44 w-full object-cover rounded-t-2xl
+                           md:group-hover:scale-105 transition"
+              />
 
-              {/* Content */}
-              <div className="p-5">
-                <h3 className="font-semibold text-gray-800 mb-1">
+              <div className="p-4">
+                <h3 className="font-semibold text-gray-800">
                   {item.name}
                 </h3>
-
                 <p className="text-green-700 font-bold text-lg">
                   {item.price}
                 </p>
 
-                <button
-                  className="
-                    mt-4 w-full py-2.5 rounded-lg
-                    bg-green-700 text-white font-semibold
-                    hover:bg-green-800 transition
-                  "
-                >
+                <button className="mt-3 w-full py-2 rounded-lg
+                                   bg-green-700 text-white
+                                   hover:bg-green-800 transition">
                   Add to Cart
                 </button>
               </div>

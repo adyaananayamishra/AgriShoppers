@@ -11,6 +11,7 @@ import Login from './Pages/Login';
 import Register from './Pages/Register';
 import AllBrands from './Pages/AllBrands';
 import Categories from './Pages/Categories';
+import AllPopularPicks from './Pages/AllPopularPicks';
 import About from './Pages/About';
 import Contact from './Pages/Contact';
 import Blog from './Pages/Blog';
@@ -19,8 +20,13 @@ import Terms from './Pages/Terms';
 import PrivacyPolicy from './Pages/PrivacyPolicy';
 import RefundCancellation from './Pages/RefundCancellation';
 import Career from './Pages/Career';
-import Media from './Pages/Media';
-import Navigation from './Pages/Navigation';
+import DeliveryAndLogistics from './Pages/DeliveryAndLogistics';
+import QuickNavigation from './Pages/QuickNavigation';
+import Tracking from './Pages/Tracking';
+import FarmerResources from './Pages/FarmerResources';
+import PoliciesAndGuidelines from './Pages/PoliciesAndGuidelines';
+import QualityAssurance from './Pages/QualityAssurance';
+import Sitemap from './Pages/Sitemap';
 
 function App() {
   const { pathname } = useLocation();
@@ -49,6 +55,7 @@ function App() {
           <Route path="/register" element={<Register />} />
           <Route path="/brands" element={<AllBrands />} />
           <Route path="/categories" element={<Categories />} />
+          <Route path="/popular-picks" element={<AllPopularPicks />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/blog" element={<Blog />} />
@@ -57,8 +64,13 @@ function App() {
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           <Route path="/refund-cancel" element={<RefundCancellation />} />
           <Route path="/career" element={<Career />} />
-          <Route path="/media" element={<Media />} />
-          <Route path="/navigation" element={<Navigation />} />
+          <Route path="/delivery-logistics" element={<DeliveryAndLogistics />} />
+          <Route path="/navigation" element={<QuickNavigation />} />
+          <Route path="/track" element={<Tracking />} />
+          <Route path="/farmer-resources" element={<FarmerResources />} />
+          <Route path="/policies-guidelines" element={<PoliciesAndGuidelines />} />
+          <Route path="/quality-assurance" element={<QualityAssurance />} />
+          <Route path="/site-map" element={<Sitemap />} />
         </Routes>
       </main>
 

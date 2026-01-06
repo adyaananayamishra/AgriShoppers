@@ -4,7 +4,7 @@ import {
   ShoppingCartIcon,
   HeartIcon,
   UserCircleIcon,
-  MagnifyingGlassIcon,
+  Bars3Icon,
 } from "@heroicons/react/24/outline";
 
 const Navbar = () => {
@@ -13,27 +13,23 @@ const Navbar = () => {
   return (
     <>
       {/* Navbar */}
-    <nav className="bg-gradient-to-r from-slate-300 via-blue-800 to-slate-700 backdrop-blur-md ">
+      <nav className="bg-gradient-to-r from-slate-300 via-blue-800 to-slate-700 backdrop-blur-md">
+      <div className="w-full px-4 md:px-8 py-4 flex items-center justify-between">
 
-        <div className="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between ">
+
           
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2 md:-ml-6">
-            <div className=" p-1 rounded-full">
-              <img
-                src="/images/logo.png"
-                alt="AgriShoppers Logo"
-                className="max-h-10 w-auto object-contain rounded-full scale-210"
-              />
-            </div>
-           
-
+            <img
+              src="/images/logo.png"
+              alt="AgriShoppers Logo"
+              className="h-10 w-auto object-contain scale-190"
+            />
           </Link>
-
 
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center space-x-8">
-            <Link to="/" className="text-white font-medium hover:text-gray-200">
+            {/* <Link to="/" className="text-white font-medium hover:text-gray-200">
               Home
             </Link>
             <Link to="/products" className="text-white font-medium hover:text-gray-200">
@@ -44,22 +40,13 @@ const Navbar = () => {
             </Link>
             <Link to="/contact" className="text-white font-medium hover:text-gray-200">
               Contact
-            </Link>
-            
-            {/* Desktop Search */}
-            {/* <div className="relative bg-amber-50 rounded-lg">
-              <input
-                type="text"
-                placeholder="Search products..."
-                className="w-64 py-2 pl-3 pr-10 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
-              />
-              <MagnifyingGlassIcon className="w-5 h-5 absolute right-3 top-1/2 -translate-y-1/2 text-gray-500" />
-            </div> */}
+            </Link> */}
           </div>
 
-          {/* Right Icons */}
-          <div className="flex items-center space-x-4">
-            {/* Wishlist (Desktop) */}
+          {/* Right Icons (Mobile + Desktop) */}
+          <div className="flex items-center space-x-4 md:mr-2">
+            
+            {/* Wishlist (Desktop only) */}
             <Link to="/wishlist" className="hidden md:flex relative text-white">
               <HeartIcon className="w-6 h-6" />
               <span className="absolute -top-2 -right-3 bg-red-600 text-xs w-5 h-5 rounded-full flex items-center justify-center">
@@ -80,30 +67,19 @@ const Navbar = () => {
               </span>
             </Link>
 
-            {/* Mobile Menu */}
+            {/* ☰ Menu Button (Right Side – Mobile + Desktop) */}
             <button
               onClick={() => setOpen(true)}
-              className="md:hidden text-white text-2xl"
+              className="text-white hover:text-gray-200"
+              aria-label="Open Menu"
             >
-              ☰
+              <Bars3Icon className="w-8 h-8" />
             </button>
           </div>
         </div>
-
-        {/* 🔍 Mobile Search (Below Navbar) */}
-        {/* <div className="md:hidden px-4 pb-3">
-          <div className="relative bg-amber-50 rounded-md">
-            <input
-              type="text"
-              placeholder="Search products..."
-              className="w-full py-2.5 pl-4 pr-10 rounded-full bg-white shadow-sm focus:outline-none"
-            />
-            <MagnifyingGlassIcon className="w-5 h-5 absolute right-4 top-1/2 -translate-y-1/2 text-gray-500" />
-          </div>  
-        </div> */}
       </nav>
 
-      {/* Mobile Overlay */}
+      {/* Overlay */}
       {open && (
         <div
           onClick={() => setOpen(false)}
@@ -111,40 +87,41 @@ const Navbar = () => {
         />
       )}
 
-      {/* Mobile Right Drawer */}
+      {/* Right Drawer (Mobile + Desktop) */}
       <div
-        className={`fixed top-0 right-0 h-full w-64 bg-slate-800 z-50 transform transition-transform duration-300 ${
+        className={`fixed top-0 right-0 h-full w-72 bg-slate-900 z-50 transform transition-transform duration-300 ${
           open ? "translate-x-0" : "translate-x-full"
         }`}
       >
-        <div className="flex items-center justify-between px-5 py-4 border-b border-slate-600">
-          <span className="text-white font-semibold">Menu</span>
-          <button onClick={() => setOpen(false)} className="text-white text-2xl">
+        <div className="flex items-center justify-between px-5 py-4 border-b border-slate-700">
+          <span className="text-white text-lg font-semibold">Menu</span>
+          <button
+            onClick={() => setOpen(false)}
+            className="text-white text-2xl"
+          >
             ✕
           </button>
         </div>
 
-       <div className="flex flex-col px-5 py-6 gap-4 text-white">
+        <div className="flex flex-col px-5 py-6 gap-4 text-white text-sm">
           <Link to="/brands" onClick={() => setOpen(false)}>Our Partner Brands</Link>
           <Link to="/seeds" onClick={() => setOpen(false)}>Quality Seeds</Link>
-          <Link to="/crop-protection" onClick={() => setOpen(false)}>Plant Protection Solutions</Link>
-          <Link to="/crop-nutrition" onClick={() => setOpen(false)}>Crop Nutrition Products</Link>
-          <Link to="/equipment" onClick={() => setOpen(false)}>Farm Tools & Equipment</Link>
+          <Link to="/crop-protection" onClick={() => setOpen(false)}>Plant Protection</Link>
+          <Link to="/crop-nutrition" onClick={() => setOpen(false)}>Crop Nutrition</Link>
+          <Link to="/equipment" onClick={() => setOpen(false)}>Farm Tools</Link>
           <Link to="/animal-husbandry" onClick={() => setOpen(false)}>Livestock Care</Link>
-          <Link to="/organic" onClick={() => setOpen(false)}>Organic Farming Range</Link>
-          <Link to="/tapas" onClick={() => setOpen(false)}>TAPAS Innovations</Link>
-          <Link to="/services" onClick={() => setOpen(false)}>Farmer Support Services</Link>
+          <Link to="/organic" onClick={() => setOpen(false)}>Organic Farming</Link>
+          <Link to="/services" onClick={() => setOpen(false)}>Farmer Services</Link>
           <Link to="/sell-with-us" onClick={() => setOpen(false)}>Become a Seller</Link>
-          <Link to="/bulk-orders" onClick={() => setOpen(false)}>Wholesale & Bulk Purchases</Link>
-          <Link to="/corporate" onClick={() => setOpen(false)}>Company Overview</Link>
+          <Link to="/bulk-orders" onClick={() => setOpen(false)}>Bulk Orders</Link>
         </div>
-
       </div>
     </>
   );
 };
 
 export default Navbar;
+
 
 // import React, { useState } from "react";
 // import { Link } from "react-router-dom";

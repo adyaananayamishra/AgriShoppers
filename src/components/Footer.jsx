@@ -13,10 +13,16 @@ const Footer = () => {
         <div className="flex flex-col items-start">
            {/* Logo */}
                 <Link to="/" className="text-2xl font-extrabold text-green-700 mb-3">
-                    <span className="text-green-600">Agri</span>
-                    <span className="text-green-500">Shoppers</span>
-                  </Link>
-          <p className="text-sm text-gray-300 max-w-xs">
+                  <div className=" p-1 rounded-full">
+                      <img
+                        src="/images/logo.png"
+                        alt="AgriShoppers Logo"
+                        className="max-h-10 w-auto object-contain rounded-full scale-210"
+                      />
+                  </div>
+                </Link>
+
+          <p className="text-sm font-medium text-gray-300 max-w-xs mt-3">
             Premium products with best quality and fast delivery.
           </p>
         </div>
@@ -33,10 +39,10 @@ const Footer = () => {
             <li><Link to="/farmer-resources" className="hover:text-white cursor-pointer">Farmer Resources</Link></li>
             <li><Link to="/quality-assurance" className="hover:text-white cursor-pointer">Quality Assurance</Link></li>
             <li><Link to="/policies-guidelines" className="hover:text-white cursor-pointer">Policies & Guidelines</Link></li>
-            <li><Link to="/join-team" className="hover:text-white cursor-pointer">Join Our Team</Link></li>
-          
+            <li><Link to="/career" className="hover:text-white cursor-pointer">Join Our Team</Link></li>
             <li><Link to="/contact" className="hover:text-white cursor-pointer">Help Center</Link></li>
-            <li><Link to="/site-map" className="hover:text-white cursor-pointer">Site Map</Link></li>
+            <li><Link to="/track" className="hover:text-white cursor-pointer">Track Order</Link></li>
+            
             {/* <li><Link to="/sell-produce" className="text-orange-500 hover:text-orange-400 cursor-pointer">Sell Your Produce</Link></li>
             <li><Link to="/bulk-partnerships" className="text-orange-500 hover:text-orange-400 cursor-pointer">Bulk Partnership Enquiries</Link></li> */}
 
@@ -52,9 +58,10 @@ const Footer = () => {
             <li><Link to="/faq" className="hover:text-slate-100 cursor-pointer">FAQ</Link></li>
             <li><Link to="/privacy-policy" className="hover:text-slate-100 cursor-pointer">Privacy Policy</Link></li>
             <li><Link to="/terms" className="hover:text-slate-100 cursor-pointer">Terms & Conditions</Link></li>
-             <li><Link to="/delivery-logistics" className="hover:text-white cursor-pointer">Delivery & Logistics</Link></li>
+            <li><Link to="/delivery-logistics" className="hover:text-white cursor-pointer">Delivery & Logistics</Link></li>
             <li><Link to="/navigation" className="hover:text-slate-100 cursor-pointer">Quick Navigation</Link></li>
             <li><Link to="/refund-cancel" className="hover:text-slate-100 cursor-pointer">Refund & Cancellation</Link></li>
+            <li><Link to="/site-map" className="hover:text-white cursor-pointer">Site Map</Link></li>
           </ul>
         </div>
 
