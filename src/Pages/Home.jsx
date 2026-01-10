@@ -16,8 +16,10 @@ import AgriImpact from '../components/AgriImpact';
 
 const Home = () => {
     return (
-        <div>
+        <>
+        <div className="pt-22"> 
             <SearchBar />
+            </div>
             <SlideBanner />
             <Filter />
             <CategoriesSection />
@@ -29,8 +31,7 @@ const Home = () => {
             <WhyChooseUs />
             <Testimonial />
             <AgriImpact />
-     
-        </div>
+        </>
     );
 };
 

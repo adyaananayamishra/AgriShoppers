@@ -12,14 +12,14 @@ const Navbar = () => {
 
   return (
     <>
-      {/* Navbar */}
-      <nav className="bg-gradient-to-r from-slate-300 via-blue-800 to-slate-700 backdrop-blur-md">
+    <nav className="fixed top-0 left-0 w-full z-50 bg-gradient-to-r from-slate-300 via-blue-800 to-slate-700 backdrop-blur-md">
+
       <div className="w-full px-4 md:px-8 py-4 flex items-center justify-between">
 
 
           
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-2 md:-ml-6">
+          <Link to="/" className="flex items-center gap-2 md:-ml-6 lg:ml-2">
             <img
               src="/images/logo.png"
               alt="AgriShoppers Logo"
@@ -88,11 +88,16 @@ const Navbar = () => {
       )}
 
       {/* Right Drawer (Mobile + Desktop) */}
-      <div
-        className={`fixed top-0 right-0 h-full w-72 bg-slate-900 z-50 transform transition-transform duration-300 ${
-          open ? "translate-x-0" : "translate-x-full"
-        }`}
+    <div
+        className={`fixed top-1 right-0 
+        h-[85vh]
+        sm:w-68 md:w-70 lg:w-75
+        bg-slate-900 z-50
+        rounded-xl shadow-2xl
+        transform transition-all duration-300
+        ${open ? "translate-x-0 opacity-100" : "translate-x-full opacity-0"}`}
       >
+
         <div className="flex items-center justify-between px-5 py-4 border-b border-slate-700">
           <span className="text-white text-lg font-semibold">Menu</span>
           <button
