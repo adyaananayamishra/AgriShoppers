@@ -13,12 +13,11 @@ const AgriImpact = () => {
       <div className="max-w-7xl mx-auto px-4">
 
         {/* Header */}
-        <div className="max-w-2xl mb-10">
-       
-          <h2 className="text-2xl sm:text-3xl font-bold text-gray-800 mt-2 text-center">
+        <div className="max-w-2xl mx-auto mb-10 text-center">
+          <h2 className="text-2xl sm:text-3xl font-bold text-gray-800 mt-2">
             Empowering Farmers Across India
           </h2>
-          <p className="text-gray-600 mt-3 text-sm sm:text-base text-center">
+          <p className="text-gray-600 mt-3 text-sm sm:text-base">
             Building a stronger agricultural ecosystem with technology,
             trust, and nationwide reach.
           </p>
@@ -30,7 +29,7 @@ const AgriImpact = () => {
           {stats.map((item, index) => (
             <div
               key={index}
-              className="bg-white rounded-2xl p-6 shadow-md hover:shadow-lg transition"
+              className="bg-white rounded-2xl p-6 shadow-md hover:shadow-lg transition text-center"
             >
               <p className="text-4xl font-extrabold text-green-600">
                 {item.value}

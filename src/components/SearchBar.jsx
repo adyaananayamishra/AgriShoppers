@@ -1,11 +1,12 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+
 import { MagnifyingGlassIcon,
 } from '@heroicons/react/24/outline';
+
 const SearchBar = () => {
   return (
-    <div className="px-4 pb-3 m-5">
-      <div className="relative mx-auto w-full max-w-md">
+    <div className="">
+      <div className="relative mx-auto w-full max-w-md ">
         <input
           type="text"
           placeholder="Search products..."
@@ -18,4 +19,4 @@ const SearchBar = () => {
 };
 
 
-export default SearchBar
+export default SearchBar;
