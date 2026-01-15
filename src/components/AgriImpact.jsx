@@ -7,7 +7,7 @@ const AgriImpact = () => {
     { value: "10K+", label: "Agri Products" },
     { value: "90%+", label: "India Coverage" },
   ];
-/**/ 
+
   return (
     <section className="bg-gradient-to-r from-green-50 via-emerald-50 to-green-100 py-14">
       <div className="max-w-7xl mx-auto px-4">
