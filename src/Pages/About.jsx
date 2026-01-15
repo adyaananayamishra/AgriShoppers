@@ -8,7 +8,7 @@ const About = () => {
         {/* Header */}
         <div className="text-center mb-16">
           <h1 className="text-4xl md:text-5xl font-bold text-green-800">
-            About Agri Shoppers
+            About
           </h1>
           <p className="mt-4 text-gray-700 text-lg max-w-3xl mx-auto">
             Agri Shoppers, a trusted brand of <strong>Agrigenesis Terrabloom Tech Private Limited</strong>, is dedicated to empowering Indian farmers with high-quality agricultural products, modern farming solutions, and expert guidance for sustainable growth.
